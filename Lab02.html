@@ -15,6 +15,7 @@
                 <a href="Lab02.html" class="active">Lab 2: AI Evaluation</a>
                 <a href="Lab03.html">Lab 3: Visualization Critique</a>
                 <a href="Lab4.html">Lab 4: Tableau Visualization</a>
+                <a href="Lab05.html">Lab 5: Vibe Coding</a>
                 <!-- Add more lab links as the semester progresses -->
             </div>
         </nav>
@@ -39,18 +40,25 @@
             <h3>Ethical Considerations</h3>
             <p>A key concern is ownership of creative work. You can record audio directly on the site, but downloading the original file requires a premium subscription. Since users upload their own creative content, it raises questions about how AI generated promotional materials or automated editing affect creative labor and authorship.</p>
 
-            <!-- Add screenshots or examples -->
-            <figure>
-                <img src="images/Audiogram.png" alt="Section of text transcribed from audio" width=90%>
-                <figcaption>Audiogram of the podcast "unapologetically Quiet" which turns your audio into a video with text.</figcaption>
-
-                <img src="images/Screenshot 2026-01-27 181727.png" alt="Adobe Podcasts website transcript script" width= 90%>
-                <figcaption>What the transcript looks like on Adobe Podcasts. It is spaced into more readable sections.</figcaption>
-
-                <img src="images/Downloaded_transcript.jpeg" alt="PDF of transcript which is one big paragrpah" width= 90%>
-                <figcaption>What the transcript looks like in a PDF format. It gets grouped into one big paragragph.</figcaption>
- 
-            </figure>
+            <!-- Image Carousel -->
+            <div class="carousel"> <!-- Grouping all the figures in Tool 1 section and giving it a specific name -->
+                <div class="carousel-slide active">  <!-- Further dividing 'Carousel' to make 'Carousel-slide' it own item. The three figures become three slides. The active slide corresponds to what is currently being displayed. --> 
+                    <img src="images/Audiogram.png" alt="Section of text transcribed from audio">
+                    <figcaption>Audiogram of the podcast "unapologetically Quiet" which turns your audio into a video with text.</figcaption>
+                </div>
+                <div class="carousel-slide"> <!-- Within 'Carousel-slide' each figure and figure caption is read as a pair -->
+                    <img src="images/Screenshot 2026-01-27 181727.png" alt="Adobe Podcasts website transcript script">
+                    <figcaption>What the transcript looks like on Adobe Podcasts. It is spaced into more readable sections.</figcaption>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/Downloaded_transcript.jpeg" alt="PDF of transcript which is one big paragrpah">
+                    <figcaption>What the transcript looks like in a PDF format. It gets grouped into one big paragragph.</figcaption>
+                </div>
+                <button class="carousel-prev" aria-label="Previous image">&#10094;</button> <!-- A button that when clicked will take you to the previous figure in the carousel. -->
+                <button class="carousel-next" aria-label="Next image">&#10095;</button> <!--A button that when clicked will take you to the next figure in the carousel. -->
+                <button class="carousel-expand" aria-label="Full screen">&#x26F6;</button> <!-- A button that when clicked will expand the carousel into fullscreen to view. -->
+                <div class="carousel-dots"></div> <!-- Dots that show up under the figure captions that change according to which figure is currently being viewed. -->
+            </div>
         </section>
 
         <section>
@@ -64,24 +72,33 @@
             <h3>Ethical Considerations</h3>
             <p>AI generated video carries risks of misuse, including creating misleading, harmful, or non consensual content. Pika's FAQ does not clearly outlined prohibited uses, which leads me to assume anything can be up for generation.</p>
 
-            <figure>
-                <img src="images/Screenshot 2026-01-27 001918.png" alt="Pika website" width= 90%>
-                <figcaption>What it looks like when you imput a prompt. </figcaption>
-
-                <img src="images/Screenshot 2026-01-27 004527.png" alt="AI generated video still of a big explsoion in a city" width=90%>
-                <figcaption>One of the shots from the videos it generated. Explosion is not happening in the sky nor is anyone concerned in the video. </figcaption>
-
-                <img src="images/WIN_20250127_16_34_17_Pro.jpg" alt="girl looking at camera unamused" width=90%>
-                <figcaption>This is the original image I imputed for pikaformance. I purposefully chose this random image of myself to see if would have an issue if subject is not looking straight at the camera or in the center. </figcaption>
-
-                <img src="images/Screenshot 2026-01-27 002250.png" alt="Pika website " width= 90%>
-                <figcaption> When using Pikaformance, you upload an image of a subject and the audio you choose. I chose myself and a snippet of my podcast trailer to see what it would look like if my audio had a visual to accompany it.</figcaption>
-
-                <img src="images/Screenshot 2026-01-27 184646.png" alt=" Turned AI video still image of girl looking at camera unamused " width= 90%>
-                <figcaption> Pika outputted a video that was a similar resolution as the orignal image, not distorting the words in the background or myself.</figcaption>
-
-            </figure>
-            <!-- Same structure as Tool 1 -->
+            <!-- Image Carousel --> <!--Following the same structure as Tool 1. The 5 figures and their figure captions will be grouped and become 5 slides-->
+            <div class="carousel">  
+                <div class="carousel-slide active"> 
+                    <img src="images/Screenshot 2026-01-27 001918.png" alt="Pika website">
+                    <figcaption>What it looks like when you imput a prompt.</figcaption>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/Screenshot 2026-01-27 004527.png" alt="AI generated video still of a big explsoion in a city">
+                    <figcaption>One of the shots from the videos it generated. Explosion is not happening in the sky nor is anyone concerned in the video.</figcaption>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/WIN_20250127_16_34_17_Pro.jpg" alt="girl looking at camera unamused">
+                    <figcaption>This is the original image I imputed for pikaformance. I purposefully chose this random image of myself to see if would have an issue if subject is not looking straight at the camera or in the center.</figcaption>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/Screenshot 2026-01-27 002250.png" alt="Pika website">
+                    <figcaption>When using Pikaformance, you upload an image of a subject and the audio you choose. I chose myself and a snippet of my podcast trailer to see what it would look like if my audio had a visual to accompany it.</figcaption>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/Screenshot 2026-01-27 184646.png" alt="Turned AI video still image of girl looking at camera unamused">
+                    <figcaption>Pika outputted a video that was a similar resolution as the orignal image, not distorting the words in the background or myself.</figcaption>
+                </div>
+                <button class="carousel-prev" aria-label="Previous image">&#10094;</button>
+                <button class="carousel-next" aria-label="Next image">&#10095;</button>
+                <button class="carousel-expand" aria-label="Full screen">&#x26F6;</button>
+                <div class="carousel-dots"></div>
+            </div>
         </section>
 
         <section>
