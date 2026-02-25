@@ -23,16 +23,35 @@
     </header>
 
     <main>
+        <section> <!--Divided this page into three different sections to improve the readability.-->
+            <h2>Portfolio Enhancement</h2>
+            <h3>Image Carousel</h3>
+            <p>With the assistance of AI, I was able to create two carousels in my Lab 2 for each of the sections on this page. Now when you visit that page you can easily navigate through the images with the arrow buttons. Additionally,there is now the option to view the carousel in fullscreen mode. In order to achieve this, I used AI to generate the necessary JavaScript and CSS code for the carousels. I then integrated this code into my existing HTML and CSS files, using the prompt down below: <!-- The last two sentences were recommended by AI and used better explain what was going on behind the scenes.-->
+            <p> <em>1.Don't change anything else. In Lab02.html, add two image carousels. One in section Tool 1: Adobe Podcasts and the other in section Tool 2: Pika. It should have arrows to click back and forth. The figure captions associated with the figures should also change when the image changes.</em></p>
+            <p>After the first prompt, AI created “Carousel-slide” to wrap each figure and figure caption, having them be read as a pair so when I move through the images, the caption would also switch. It created the buttons that would be visible on the page. When clicked, they would either take me to the previous, next, expand, or switch the dots for navigation. The option for an expand button came after modifying when I realized that the carousel would shrink to adjust to the changing width of the webpage. If one were to view it on a mobile device, it would be harder to see. Because of this I added a expand button that allows for a full screen view. I did this using the second prompt below: </p>
+            <p><em>2. I like what you did, don't change anything else. Now add an expand button that takes the carousel into a fullscreen view. </em></p>
+            
+            <p> This create the image carousel that is easy to navigate even in a mobile view.</p>
+            <p>This <a href="Lab02.html">link</a> will directly take you to Lab 2 where you can see the carousels.</p> <!--Instead of inserting figure, I directly linked Lab 2.-->
+        </section>
+
         <section>
-            <h2>Critical Reflection</h2>
-            <h3>Techincal Understandings</h3>
-            <p>Insert words</p>
-
-            <h3>Process Evaluation</h3>
-            <p>Insert words</p>
-
-            <h3>Ethical & Pedagogical Considerations</h3>
-            <p>Insert Words</p>
+            <h2>Python Code Generation</h2>
+            <h3>Bar Chart Visualization</h3>
+            <p> I used Google Colab and AI to help me visualize my dataset into a bar chart. I've worked with python, but my skills are a little rusty. I was interested in the relationship between phone usage and age so I tasked AI with creating a simple bar. It grouped the Daily_Phone_Hours by the Age because it needed to look at the phone hours within each age in order to calculate the sum for each. Then it used the matplotlib package to turn this data into a bar chart. I did this using the prompt below: </p>
+            <p><em> 1. Read the CSV file Smartphone_Usage_Productivity_Dataset_50000.csv and then create a bar chart that visualizes the total Daily_Phone_Hours on the Y axis and Age on the X axis.</em></p>
+            
+            <p>The first output was nearly perfect but not every age was visible on the X-axis. The number visible were every 10 (e.g. 20,30,40) so I modified the prompt to show every age.
+            <p><em>2. I like what you did. Without changing anything else, make every single age value on the X-axis visible. </em></p>
+            
+            <p>The final outputted a bar chart that showed the total phone hours according to the age group.</p>
+            <img src="images/Screenshot 2026-02-24 120444.png" alt="Bar Chart of Phone Usage by Age" width="100%"> 
+            <p>This <a href="https://colab.research.google.com/drive/1ENIqkia6Z8Uptht9nVQZ2T4Z7a7aFKzi?usp=sharing">link</a> will take you to the notebook on Google Colab</p>  <!--The link will take you to the Google Colab page where one can view the code and comments -->
+        </section>  
+        
+        <section>
+                <h2> My Vibe Coding Guidelines</h2>
+            <p>In the future, when it comes to working with AI, as long as it is not penalized in my academic work or professional work, then I'd like to continue experimenting with  AI, especially if it helps me enhance my work. As long as I am fully transparent to others and in my work. It is dangerous to assume AI is always right so I will never let AI make decisions for me, think on my behalf, nor generate large-scale projects. I should not use AI if I cannot at least understand the logic. I should at least ask AI to explain what I am implementing. </p>
         </section>
     </main>
 
