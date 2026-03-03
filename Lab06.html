@@ -1,22 +1,22 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!--After asking AI, I learned that in order to create the interactive map, the core mapping library is called "leaflet"-->
     <title>Hometown Map | Kelsey Sanchez</title>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/> <!-- what provies the actually icons. It changed from Gyphicon to Font Awesome becasue the icons I requested did not exist in the previous one-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/> <!-- what styles the colored market pin shapes-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        #map_f707ae400608861a67a3b4b0d51f1c0b {
+        #map_b918bf38e5a7bd2c4720a8c1a5acf095 {
             width: 100%;
-            height: 600px;
+            height: 600px;  /* Setting the height and width of the map. This is needed for the map to render and behave correctly */
             border-radius: 8px;
         }
         .leaflet-container { font-size: 1rem; }
@@ -53,7 +53,7 @@ I had no idea how to continue after the key code components that were provided. 
 
         <section>
             <h2>Interactive Map</h2>
-            <div class="folium-map" id="map_f707ae400608861a67a3b4b0d51f1c0b"></div>
+            <div class="folium-map" id="map_b918bf38e5a7bd2c4720a8c1a5acf095"></div>
         </section>
     </main>
 
@@ -64,10 +64,10 @@ I had no idea how to continue after the key code components that were provided. 
 <script>
     
     
-            var map_f707ae400608861a67a3b4b0d51f1c0b = L.map(
-                "map_f707ae400608861a67a3b4b0d51f1c0b",
+            var map_b918bf38e5a7bd2c4720a8c1a5acf095 = L.map(
+                "map_b918bf38e5a7bd2c4720a8c1a5acf095",
                 {
-                    center: [32.71139688888889, -97.10850677777779],
+                    center: [32.71139688888889, -97.10850677777779], /* Setting the intital center point of the map using the average latitude and longitude of the locations I plotted. This ensures my map is centered witin the Arlington, Tx area. */
                     crs: L.CRS.EPSG3857,
                     ...{
   "zoom": 13,
@@ -82,7 +82,7 @@ I had no idea how to continue after the key code components that were provided. 
 
         
     
-            var tile_layer_8972f1f01a42720a0f61c2ca69575d83 = L.tileLayer(
+            var tile_layer_87bac78dd9725b1f9a340924460f4891 = L.tileLayer(
                 "https://api.mapbox.com/styles/v1/kelseysanchez/cmm3w992g002n01s85ccla230/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoia2Vsc2V5c2FuY2hleiIsImEiOiJjbTF6bHh6cDkwOWZ5MmxwcTlpNGpya2d0In0.vvgJ7g1B8e02vHfYChGD5Q",
                 {
   "minZoom": 0,
@@ -99,17 +99,18 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-            tile_layer_8972f1f01a42720a0f61c2ca69575d83.addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+            tile_layer_87bac78dd9725b1f9a340924460f4891.addTo(map_b918bf38e5a7bd2c4720a8c1a5acf095);
+        
         
     
-            var marker_0b5ecfa57bc0c51ac78abe218e6c14e6 = L.marker(
+            var marker_e2890a834e26da2e65a2b6167c7d327e = L.marker(
                 [32.708801, -97.155641],
                 {
 }
-            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+            ).addTo(map_b918bf38e5a7bd2c4720a8c1a5acf095);
         
     
-            var icon_99b71f8301a125154d10a68861ee8c39 = L.AwesomeMarkers.icon(
+            var icon_ee733ceb3713d4488eb64edd8a4bce62 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "cadetblue",
   "iconColor": "white",
@@ -120,26 +121,26 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-        var popup_7e5e137eb29291bdadcfe716b507f788 = L.popup({
+        var popup_d1d36f6b1c284958e27c0b63431b5e96 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_1986a42a13e666bce5c81ea8830febbe = $(`<div id="html_1986a42a13e666bce5c81ea8830febbe" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Pan Pan Bakery & Cafe</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Cafe         </p>         <img src="https://s3-media0.fl.yelpcdn.com/bphoto/aPtlgZE8ROSvIahVuY3x_Q/o.jpg"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Pan Pan Bakery & Cafe">         <p style="font-size:13px; line-height:1.4; margin:0;">             Family-owned Mexican & Japanese Bakery and Caf�. They have a unique selection of baked goods and beverages/flavors that offer a fresh take on traditional cafes.          </p>     </div>     </div>`)[0];
-                popup_7e5e137eb29291bdadcfe716b507f788.setContent(html_1986a42a13e666bce5c81ea8830febbe);
+                var html_2d17e4f669c33734cccc7afe2211ce81 = $(`<div id="html_2d17e4f669c33734cccc7afe2211ce81" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Pan Pan Bakery and Café</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Cafe         </p>         <img src="https://s3-media0.fl.yelpcdn.com/bphoto/aPtlgZE8ROSvIahVuY3x_Q/o.jpg"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Pan Pan Bakery and Café">         <p style="font-size:13px; line-height:1.4; margin:0;">             Family-owned Mexican and Japanese Bakery and Cafe. They have a unique selection of baked goods and beverages/flavors that offer a fresh take on traditional cafes.          </p>     </div>     </div>`)[0];
+                popup_d1d36f6b1c284958e27c0b63431b5e96.setContent(html_2d17e4f669c33734cccc7afe2211ce81);
             
         
 
-        marker_0b5ecfa57bc0c51ac78abe218e6c14e6.bindPopup(popup_7e5e137eb29291bdadcfe716b507f788)
+        marker_e2890a834e26da2e65a2b6167c7d327e.bindPopup(popup_d1d36f6b1c284958e27c0b63431b5e96)
         ;
 
         
     
     
-            marker_0b5ecfa57bc0c51ac78abe218e6c14e6.bindTooltip(
+            marker_e2890a834e26da2e65a2b6167c7d327e.bindTooltip(
                 `<div>
-                     Pan Pan Bakery & Cafe
+                     Pan Pan Bakery and Café
                  </div>`,
                 {
   "sticky": true,
@@ -147,17 +148,17 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-                marker_0b5ecfa57bc0c51ac78abe218e6c14e6.setIcon(icon_99b71f8301a125154d10a68861ee8c39);
+                marker_e2890a834e26da2e65a2b6167c7d327e.setIcon(icon_ee733ceb3713d4488eb64edd8a4bce62);
             
     
-            var marker_c82d3dcbec92f173e279d4e9bb2162e3 = L.marker(
+            var marker_08537dfa49c436988a03cd2a77a5ffac = L.marker(
                 [32.75249, -97.08092],
                 {
 }
-            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+            ).addTo(map_b918bf38e5a7bd2c4720a8c1a5acf095);
         
     
-            var icon_5f97e53e463b81c8aee9ac420d84b979 = L.AwesomeMarkers.icon(
+            var icon_dc609ffa7df13a3088b4556261495cba = L.AwesomeMarkers.icon(
                 {
   "markerColor": "pink",
   "iconColor": "white",
@@ -168,24 +169,24 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-        var popup_e7469bd2c04b95e2f0126a265f773a33 = L.popup({
+        var popup_ef4ca8992b96db581200327b13cbf90d = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_8d0fec1cb95ad7f09a299028e25ef022 = $(`<div id="html_8d0fec1cb95ad7f09a299028e25ef022" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Six Flags Over Texas</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Recreation         </p>         <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/fortworth/Six-Flags-Over-Texas_a0c13a9a-5056-a348-3a364a059f8b38ef.jpg"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Six Flags Over Texas">         <p style="font-size:13px; line-height:1.4; margin:0;">             First Six Flags opened in 1961. There is truly something for everyone. It has amazing selection of rides ranging from small, family-friendly rollercosters to massive rollercoasters. Ticket prices are also affordable.         </p>     </div>     </div>`)[0];
-                popup_e7469bd2c04b95e2f0126a265f773a33.setContent(html_8d0fec1cb95ad7f09a299028e25ef022);
+                var html_8103d39282c6154d11b34eefd226f5ff = $(`<div id="html_8103d39282c6154d11b34eefd226f5ff" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Six Flags Over Texas</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Recreation         </p>         <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/fortworth/Six-Flags-Over-Texas_a0c13a9a-5056-a348-3a364a059f8b38ef.jpg"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Six Flags Over Texas">         <p style="font-size:13px; line-height:1.4; margin:0;">             First Six Flags opened in 1961. There is truly something for everyone. It has amazing selection of rides ranging from small, family-friendly rollercosters to massive rollercoasters. Ticket prices are also affordable.         </p>     </div>     </div>`)[0];
+                popup_ef4ca8992b96db581200327b13cbf90d.setContent(html_8103d39282c6154d11b34eefd226f5ff);
             
         
 
-        marker_c82d3dcbec92f173e279d4e9bb2162e3.bindPopup(popup_e7469bd2c04b95e2f0126a265f773a33)
+        marker_08537dfa49c436988a03cd2a77a5ffac.bindPopup(popup_ef4ca8992b96db581200327b13cbf90d)
         ;
 
         
     
     
-            marker_c82d3dcbec92f173e279d4e9bb2162e3.bindTooltip(
+            marker_08537dfa49c436988a03cd2a77a5ffac.bindTooltip(
                 `<div>
                      Six Flags Over Texas
                  </div>`,
@@ -195,17 +196,17 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-                marker_c82d3dcbec92f173e279d4e9bb2162e3.setIcon(icon_5f97e53e463b81c8aee9ac420d84b979);
+                marker_08537dfa49c436988a03cd2a77a5ffac.setIcon(icon_dc609ffa7df13a3088b4556261495cba);
             
     
-            var marker_b7e6556b198e16735b44f2ab531d01ac = L.marker(
+            var marker_3554c5ef455f9f5f62a8683ad61e4a20 = L.marker(
                 [32.755329, -97.081864],
                 {
 }
-            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+            ).addTo(map_b918bf38e5a7bd2c4720a8c1a5acf095);
         
     
-            var icon_6e3f0db1d4341f0786cf2a2a943e9ac8 = L.AwesomeMarkers.icon(
+            var icon_63e40a4e608581fe03034a41bb2c385e = L.AwesomeMarkers.icon(
                 {
   "markerColor": "purple",
   "iconColor": "white",
@@ -216,24 +217,24 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-        var popup_b4427f4360d8522b5954180dcdb2be49 = L.popup({
+        var popup_48e5387001bf3f4c3c4dc275248e89d3 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_bb0ed027c7041325a509f5b7e9041348 = $(`<div id="html_bb0ed027c7041325a509f5b7e9041348" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Arlington Museum of Art</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Cultural         </p>         <img src="https://bloximages.newyork1.vip.townnews.com/theshorthorn.com/content/tncms/assets/v3/editorial/9/b2/9b2e1496-9177-11ef-8d0f-2fe7851d0c70/671952c43dd15.image.jpg?resize=750%2C500"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Arlington Museum of Art">         <p style="font-size:13px; line-height:1.4; margin:0;">             This museum has no permanent collection, it is constanly changing. It hosts exhibitions of popular franchises like Disney, Game of Thrones, and Wicked. Its really cool experience to learn about the different props and costumes within the media we like to consume.         </p>     </div>     </div>`)[0];
-                popup_b4427f4360d8522b5954180dcdb2be49.setContent(html_bb0ed027c7041325a509f5b7e9041348);
+                var html_84dc3ec341c26624071db62ce5d9c72d = $(`<div id="html_84dc3ec341c26624071db62ce5d9c72d" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Arlington Museum of Art</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Cultural         </p>         <img src="https://bloximages.newyork1.vip.townnews.com/theshorthorn.com/content/tncms/assets/v3/editorial/9/b2/9b2e1496-9177-11ef-8d0f-2fe7851d0c70/671952c43dd15.image.jpg?resize=750%2C500"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Arlington Museum of Art">         <p style="font-size:13px; line-height:1.4; margin:0;">             This museum has no permanent collection, it is constanly changing. It hosts exhibitions of popular franchises like Disney, Game of Thrones, and Wicked. Its really cool experience to learn about the different props and costumes within the media we like to consume.         </p>     </div>     </div>`)[0];
+                popup_48e5387001bf3f4c3c4dc275248e89d3.setContent(html_84dc3ec341c26624071db62ce5d9c72d);
             
         
 
-        marker_b7e6556b198e16735b44f2ab531d01ac.bindPopup(popup_b4427f4360d8522b5954180dcdb2be49)
+        marker_3554c5ef455f9f5f62a8683ad61e4a20.bindPopup(popup_48e5387001bf3f4c3c4dc275248e89d3)
         ;
 
         
     
     
-            marker_b7e6556b198e16735b44f2ab531d01ac.bindTooltip(
+            marker_3554c5ef455f9f5f62a8683ad61e4a20.bindTooltip(
                 `<div>
                      Arlington Museum of Art
                  </div>`,
@@ -243,17 +244,17 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-                marker_b7e6556b198e16735b44f2ab531d01ac.setIcon(icon_6e3f0db1d4341f0786cf2a2a943e9ac8);
+                marker_3554c5ef455f9f5f62a8683ad61e4a20.setIcon(icon_63e40a4e608581fe03034a41bb2c385e);
             
     
-            var marker_cefc81f24434f09b20d435abbe597ba4 = L.marker(
+            var marker_9589dd99880cafaf0a2de2d1468d0fc7 = L.marker(
                 [32.67949, -97.11288],
                 {
 }
-            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+            ).addTo(map_b918bf38e5a7bd2c4720a8c1a5acf095);
         
     
-            var icon_3da3a83d25d817f74829f519cf0c5e2b = L.AwesomeMarkers.icon(
+            var icon_f50f86bef2c1fec1cad8f8baf766decc = L.AwesomeMarkers.icon(
                 {
   "markerColor": "red",
   "iconColor": "white",
@@ -264,24 +265,24 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-        var popup_bd55a6e0c48e824f0ee6cecc858463c2 = L.popup({
+        var popup_519ace983e65b9ae785535c970ea12c1 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_dc943a1eaf0d07a4a8456f3f738a5337 = $(`<div id="html_dc943a1eaf0d07a4a8456f3f738a5337" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Mercado Juarez</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Resturant         </p>         <img src="https://static1.squarespace.com/static/67ffe9c67fdd7b4f098266c7/67ffe9ca7fdd7b4f09826799/68547feacc02100a18bbae2d/1751313421004/MG_7338.jpeg?format=1500w"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Mercado Juarez">         <p style="font-size:13px; line-height:1.4; margin:0;">             This is a Tex-Mex resturant whose atmosphere is one of the best, truly making you feel like you are dining in an hacienda with their interior design. You can order dishes that are Tex-Mex, but they also sell more traditional Mexcian dishes. ( Has the best salsa in my opinion)         </p>     </div>     </div>`)[0];
-                popup_bd55a6e0c48e824f0ee6cecc858463c2.setContent(html_dc943a1eaf0d07a4a8456f3f738a5337);
+                var html_d0ba3eace55e3876344e58e5c02aee4e = $(`<div id="html_d0ba3eace55e3876344e58e5c02aee4e" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Mercado Juarez</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Resturant         </p>         <img src="https://static1.squarespace.com/static/67ffe9c67fdd7b4f098266c7/67ffe9ca7fdd7b4f09826799/68547feacc02100a18bbae2d/1751313421004/MG_7338.jpeg?format=1500w"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Mercado Juarez">         <p style="font-size:13px; line-height:1.4; margin:0;">             This is a Tex-Mex resturant whose atmosphere is one of the best, truly making you feel like you are dining in an hacienda with their interior design. You can order dishes that are Tex-Mex, but they also sell more traditional Mexcian dishes. ( Has the best salsa in my opinion)         </p>     </div>     </div>`)[0];
+                popup_519ace983e65b9ae785535c970ea12c1.setContent(html_d0ba3eace55e3876344e58e5c02aee4e);
             
         
 
-        marker_cefc81f24434f09b20d435abbe597ba4.bindPopup(popup_bd55a6e0c48e824f0ee6cecc858463c2)
+        marker_9589dd99880cafaf0a2de2d1468d0fc7.bindPopup(popup_519ace983e65b9ae785535c970ea12c1)
         ;
 
         
     
     
-            marker_cefc81f24434f09b20d435abbe597ba4.bindTooltip(
+            marker_9589dd99880cafaf0a2de2d1468d0fc7.bindTooltip(
                 `<div>
                      Mercado Juarez
                  </div>`,
@@ -291,17 +292,17 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-                marker_cefc81f24434f09b20d435abbe597ba4.setIcon(icon_3da3a83d25d817f74829f519cf0c5e2b);
+                marker_9589dd99880cafaf0a2de2d1468d0fc7.setIcon(icon_f50f86bef2c1fec1cad8f8baf766decc);
             
     
-            var marker_ce77f91dfca03aeb56f3b52524f0e13c = L.marker(
+            var marker_1e8124f358269de2e219c568bc7be08f = L.marker(
                 [32.7217, -97.11509],
                 {
 }
-            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+            ).addTo(map_b918bf38e5a7bd2c4720a8c1a5acf095);
         
     
-            var icon_a8a2963787359d9edea7a827eea6a405 = L.AwesomeMarkers.icon(
+            var icon_06913e4e106778fcbc63ae08d76a355d = L.AwesomeMarkers.icon(
                 {
   "markerColor": "red",
   "iconColor": "white",
@@ -312,26 +313,26 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-        var popup_aa2547cc49c1c359e9a20d5564b92bfd = L.popup({
+        var popup_400da5668d22189b27a44389af92a1d0 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_8a0fd073628df74caa20619708adca17 = $(`<div id="html_8a0fd073628df74caa20619708adca17" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Bethany Cafe </h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Resturant         </p>         <img src="https://s3-media0.fl.yelpcdn.com/bphoto/r2wBUZEdgABetTiZjXQUtA/348s.jpg"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Bethany Cafe ">         <p style="font-size:13px; line-height:1.4; margin:0;">             A family-owned resturant that sells Boba tea  and Asian snack, apetizers, dishes to order. The portions they give for the price is unbeatable. Their drink options range from shakes, teas, lattes, smoothies that is twice as much as a typical boba-chain location.         </p>     </div>     </div>`)[0];
-                popup_aa2547cc49c1c359e9a20d5564b92bfd.setContent(html_8a0fd073628df74caa20619708adca17);
+                var html_3a90760d617254fa7fb88afaaf6ce594 = $(`<div id="html_3a90760d617254fa7fb88afaaf6ce594" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Bethany Café </h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Resturant         </p>         <img src="https://s3-media0.fl.yelpcdn.com/bphoto/r2wBUZEdgABetTiZjXQUtA/348s.jpg"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Bethany Café ">         <p style="font-size:13px; line-height:1.4; margin:0;">             A family-owned resturant that sells Boba tea  and Asian snack, apetizers, dishes to order. The portions they give for the price is unbeatable. Their drink options range from shakes, teas, lattes, smoothies that is twice as much as a typical boba-chain location.         </p>     </div>     </div>`)[0];
+                popup_400da5668d22189b27a44389af92a1d0.setContent(html_3a90760d617254fa7fb88afaaf6ce594);
             
         
 
-        marker_ce77f91dfca03aeb56f3b52524f0e13c.bindPopup(popup_aa2547cc49c1c359e9a20d5564b92bfd)
+        marker_1e8124f358269de2e219c568bc7be08f.bindPopup(popup_400da5668d22189b27a44389af92a1d0)
         ;
 
         
     
     
-            marker_ce77f91dfca03aeb56f3b52524f0e13c.bindTooltip(
+            marker_1e8124f358269de2e219c568bc7be08f.bindTooltip(
                 `<div>
-                     Bethany Cafe 
+                     Bethany Café 
                  </div>`,
                 {
   "sticky": true,
@@ -339,17 +340,17 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-                marker_ce77f91dfca03aeb56f3b52524f0e13c.setIcon(icon_a8a2963787359d9edea7a827eea6a405);
+                marker_1e8124f358269de2e219c568bc7be08f.setIcon(icon_06913e4e106778fcbc63ae08d76a355d);
             
     
-            var marker_ca8c3f1f3db50bd757de7d1d3f6139f8 = L.marker(
+            var marker_ff117dbf85840bf5c74abcedd5e3264b = L.marker(
                 [32.738337, -97.11094],
                 {
 }
-            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+            ).addTo(map_b918bf38e5a7bd2c4720a8c1a5acf095);
         
     
-            var icon_f3b6a76cb959e65da4e749d1c6a72eab = L.AwesomeMarkers.icon(
+            var icon_e8c745fc038cd7b958885e892cc887e6 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -360,24 +361,24 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-        var popup_d4384092f1f447600b718e293dee144e = L.popup({
+        var popup_825612386224f5d8ecb387c8c6ef0777 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_ec172b8171b4e191716d29b4302d384b = $(`<div id="html_ec172b8171b4e191716d29b4302d384b" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">The Mosaic Market </h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Local Business         </p>         <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/12/25/41/come-see-what-s-inside.jpg?w=1200&h=1200&s=1"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="The Mosaic Market ">         <p style="font-size:13px; line-height:1.4; margin:0;">             This place is one-of-a-kind. I've seen home-d�cor and jewerly being sold to plants and homemade hot sauce.  You truly don't know what you'll find here and its always nice to shop small.          </p>     </div>     </div>`)[0];
-                popup_d4384092f1f447600b718e293dee144e.setContent(html_ec172b8171b4e191716d29b4302d384b);
+                var html_dcc0e0d7e83b1ce8d5fe27dffd2eb6fb = $(`<div id="html_dcc0e0d7e83b1ce8d5fe27dffd2eb6fb" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">The Mosaic Market </h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Local Business         </p>         <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/12/25/41/come-see-what-s-inside.jpg?w=1200&h=1200&s=1"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="The Mosaic Market ">         <p style="font-size:13px; line-height:1.4; margin:0;">             This place is one-of-a-kind. I've seen home-decor and jewerly being sold to plants and homemade hot sauce.  You truly don't know what you'll find here and its always nice to shop small.          </p>     </div>     </div>`)[0];
+                popup_825612386224f5d8ecb387c8c6ef0777.setContent(html_dcc0e0d7e83b1ce8d5fe27dffd2eb6fb);
             
         
 
-        marker_ca8c3f1f3db50bd757de7d1d3f6139f8.bindPopup(popup_d4384092f1f447600b718e293dee144e)
+        marker_ff117dbf85840bf5c74abcedd5e3264b.bindPopup(popup_825612386224f5d8ecb387c8c6ef0777)
         ;
 
         
     
     
-            marker_ca8c3f1f3db50bd757de7d1d3f6139f8.bindTooltip(
+            marker_ff117dbf85840bf5c74abcedd5e3264b.bindTooltip(
                 `<div>
                      The Mosaic Market 
                  </div>`,
@@ -387,17 +388,17 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-                marker_ca8c3f1f3db50bd757de7d1d3f6139f8.setIcon(icon_f3b6a76cb959e65da4e749d1c6a72eab);
+                marker_ff117dbf85840bf5c74abcedd5e3264b.setIcon(icon_e8c745fc038cd7b958885e892cc887e6);
             
     
-            var marker_4fc22a1a90565b1de0053ec0e3f30be0 = L.marker(
+            var marker_b9a4e5fc5c0553d713a54ada29a2d2e6 = L.marker(
                 [32.679339, -97.129592],
                 {
 }
-            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+            ).addTo(map_b918bf38e5a7bd2c4720a8c1a5acf095);
         
     
-            var icon_9d6d524f261c3d886826a265afa1a0b0 = L.AwesomeMarkers.icon(
+            var icon_4fa115f96bc902aeef44b349ec61b0c6 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "pink",
   "iconColor": "white",
@@ -408,24 +409,24 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-        var popup_2d232a77c98e98ff52a4026c63f38277 = L.popup({
+        var popup_a95dde9a92b8e32ffcd60f68d77c7afc = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_2733597d8fdb2f2dad2b0539dac9b7ac = $(`<div id="html_2733597d8fdb2f2dad2b0539dac9b7ac" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Round One Bowling & Arcade</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Recreation         </p>         <img src="https://images.squarespace-cdn.com/content/v1/602d1a7212b33a4973f1ba6a/8eee53a6-93f5-4f27-9477-12af4f5b5738/ATCArcade.png"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Round One Bowling & Arcade">         <p style="font-size:13px; line-height:1.4; margin:0;">             It's a Japanese arcade and one of the few locations in Texas. It's really cool to see the different kinds of games and claw machines they have.          </p>     </div>     </div>`)[0];
-                popup_2d232a77c98e98ff52a4026c63f38277.setContent(html_2733597d8fdb2f2dad2b0539dac9b7ac);
+                var html_df3e426fc94d7f04a7cdd786504480c9 = $(`<div id="html_df3e426fc94d7f04a7cdd786504480c9" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Round One Bowling & Arcade</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Recreation         </p>         <img src="https://images.squarespace-cdn.com/content/v1/602d1a7212b33a4973f1ba6a/8eee53a6-93f5-4f27-9477-12af4f5b5738/ATCArcade.png"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Round One Bowling & Arcade">         <p style="font-size:13px; line-height:1.4; margin:0;">             It is a Japanese arcade and one of the few locations in Texas. It's really cool to see the different kinds of games and claw machines they have.          </p>     </div>     </div>`)[0];
+                popup_a95dde9a92b8e32ffcd60f68d77c7afc.setContent(html_df3e426fc94d7f04a7cdd786504480c9);
             
         
 
-        marker_4fc22a1a90565b1de0053ec0e3f30be0.bindPopup(popup_2d232a77c98e98ff52a4026c63f38277)
+        marker_b9a4e5fc5c0553d713a54ada29a2d2e6.bindPopup(popup_a95dde9a92b8e32ffcd60f68d77c7afc)
         ;
 
         
     
     
-            marker_4fc22a1a90565b1de0053ec0e3f30be0.bindTooltip(
+            marker_b9a4e5fc5c0553d713a54ada29a2d2e6.bindTooltip(
                 `<div>
                      Round One Bowling & Arcade
                  </div>`,
@@ -435,17 +436,17 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-                marker_4fc22a1a90565b1de0053ec0e3f30be0.setIcon(icon_9d6d524f261c3d886826a265afa1a0b0);
+                marker_b9a4e5fc5c0553d713a54ada29a2d2e6.setIcon(icon_4fa115f96bc902aeef44b349ec61b0c6);
             
     
-            var marker_4a9c41600aa89415a40ee7e94d69bfa8 = L.marker(
+            var marker_fc26cb506ccd1d3827478d86dff4bf76 = L.marker(
                 [32.715453, -97.079996],
                 {
 }
-            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+            ).addTo(map_b918bf38e5a7bd2c4720a8c1a5acf095);
         
     
-            var icon_9627a8918adf5ee5aa2f9b5dae616ee5 = L.AwesomeMarkers.icon(
+            var icon_526458873a69a29a3eb7212098dbefcc = L.AwesomeMarkers.icon(
                 {
   "markerColor": "pink",
   "iconColor": "white",
@@ -456,24 +457,24 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-        var popup_12c5aeb3a40a26870bb47a7159a493eb = L.popup({
+        var popup_59fd25f1a5078941259047fe3cc92e56 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_f0de34fbedb375988af1cca965fc58fe = $(`<div id="html_f0de34fbedb375988af1cca965fc58fe" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">East Library and Recreation Center </h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Recreation         </p>         <img src="https://www.arlingtontx.gov/files/assets/city/v/2/parks-amp-recreation/images/east_library_and_recreation_center.jpg?w=1200"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="East Library and Recreation Center ">         <p style="font-size:13px; line-height:1.4; margin:0;">             It has a pool, library, computers, gym, basketball court and so much more. Its in the middle of a park so you can always talk a walk outside as well. It's a good all-in-one kind of spot. Perfect for days where you don't want an activity that spending money.          </p>     </div>     </div>`)[0];
-                popup_12c5aeb3a40a26870bb47a7159a493eb.setContent(html_f0de34fbedb375988af1cca965fc58fe);
+                var html_e6e3134bd1de4c3dc13e9fc7cb9885e0 = $(`<div id="html_e6e3134bd1de4c3dc13e9fc7cb9885e0" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">East Library and Recreation Center </h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Recreation         </p>         <img src="https://www.arlingtontx.gov/files/assets/city/v/2/parks-amp-recreation/images/east_library_and_recreation_center.jpg?w=1200"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="East Library and Recreation Center ">         <p style="font-size:13px; line-height:1.4; margin:0;">             It has a pool, library, computers, gym, basketball court and so much more. It is in the middle of a park so you can always talk a walk outside as well. Its a good all-in-one kind of spot. Perfect for days where you don't want an activity that involves spending money.          </p>     </div>     </div>`)[0];
+                popup_59fd25f1a5078941259047fe3cc92e56.setContent(html_e6e3134bd1de4c3dc13e9fc7cb9885e0);
             
         
 
-        marker_4a9c41600aa89415a40ee7e94d69bfa8.bindPopup(popup_12c5aeb3a40a26870bb47a7159a493eb)
+        marker_fc26cb506ccd1d3827478d86dff4bf76.bindPopup(popup_59fd25f1a5078941259047fe3cc92e56)
         ;
 
         
     
     
-            marker_4a9c41600aa89415a40ee7e94d69bfa8.bindTooltip(
+            marker_fc26cb506ccd1d3827478d86dff4bf76.bindTooltip(
                 `<div>
                      East Library and Recreation Center 
                  </div>`,
@@ -483,17 +484,17 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-                marker_4a9c41600aa89415a40ee7e94d69bfa8.setIcon(icon_9627a8918adf5ee5aa2f9b5dae616ee5);
+                marker_fc26cb506ccd1d3827478d86dff4bf76.setIcon(icon_526458873a69a29a3eb7212098dbefcc);
             
     
-            var marker_fb841bfbd24d315f45781fe2efc4d8c0 = L.marker(
+            var marker_984ea48ae3c6001b5c1ddfc5c2da621f = L.marker(
                 [32.651633, -97.109638],
                 {
 }
-            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+            ).addTo(map_b918bf38e5a7bd2c4720a8c1a5acf095);
         
     
-            var icon_362a3cf22306dca2794ecca35282ee58 = L.AwesomeMarkers.icon(
+            var icon_291d90520d5b0dc299c84086baa876e9 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "pink",
   "iconColor": "white",
@@ -504,24 +505,24 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-        var popup_be5a5a90ed8c6722b66a6750ee22f2b9 = L.popup({
+        var popup_8337d708975fc07285259d8c1e52822b = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_90a84626afe7f65cb922d786a3800dc3 = $(`<div id="html_90a84626afe7f65cb922d786a3800dc3" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;"> Arlington Highlands</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Recreation         </p>         <img src="https://i0.wp.com/fortworthreport.org/wp-content/uploads/2025/04/image1.jpg?fit=1999%2C945&quality=89&ssl=1"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt=" Arlington Highlands">         <p style="font-size:13px; line-height:1.4; margin:0;">             There is shopping, resturants, and enterainment all in one place. It�s a very walkable spot with outdoor tables and chairs.  At night, all the string lights are lit, illuminating the place, its very beautiful.          </p>     </div>     </div>`)[0];
-                popup_be5a5a90ed8c6722b66a6750ee22f2b9.setContent(html_90a84626afe7f65cb922d786a3800dc3);
+                var html_ee128cec0dfeae605c6089ab86d33bca = $(`<div id="html_ee128cec0dfeae605c6089ab86d33bca" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;"> Arlington Highlands</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Recreation         </p>         <img src="https://i0.wp.com/fortworthreport.org/wp-content/uploads/2025/04/image1.jpg?fit=1999%2C945&quality=89&ssl=1"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt=" Arlington Highlands">         <p style="font-size:13px; line-height:1.4; margin:0;">             There is shopping, resturants, and enterainment all in one place. It is a very walkable spot with outdoor tables and chairs.  At night, all the string lights are lit, illuminating the place, it is very beautiful.          </p>     </div>     </div>`)[0];
+                popup_8337d708975fc07285259d8c1e52822b.setContent(html_ee128cec0dfeae605c6089ab86d33bca);
             
         
 
-        marker_fb841bfbd24d315f45781fe2efc4d8c0.bindPopup(popup_be5a5a90ed8c6722b66a6750ee22f2b9)
+        marker_984ea48ae3c6001b5c1ddfc5c2da621f.bindPopup(popup_8337d708975fc07285259d8c1e52822b)
         ;
 
         
     
     
-            marker_fb841bfbd24d315f45781fe2efc4d8c0.bindTooltip(
+            marker_984ea48ae3c6001b5c1ddfc5c2da621f.bindTooltip(
                 `<div>
                       Arlington Highlands
                  </div>`,
@@ -531,8 +532,7 @@ I had no idea how to continue after the key code components that were provided. 
             );
         
     
-                marker_fb841bfbd24d315f45781fe2efc4d8c0.setIcon(icon_362a3cf22306dca2794ecca35282ee58);
+                marker_984ea48ae3c6001b5c1ddfc5c2da621f.setIcon(icon_291d90520d5b0dc299c84086baa876e9);
             
 </script>
-</body>
 </html>

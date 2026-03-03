@@ -36,7 +36,7 @@ def geocode(address: str) -> tuple:          # It is converting the address whic
 
 
 # ── Read CSV ─────────────────────────────────────────────────────────────────
-df = pd.read_csv('Hometown_Locations.csv')
+df = pd.read_csv('Hometown_Locations.csv', encoding='latin-1')
 
 # Removing any leading or trailingwhitespaces from column Name and Type. This is important to avoid early on errors. 
 df.columns = df.columns.str.strip()
