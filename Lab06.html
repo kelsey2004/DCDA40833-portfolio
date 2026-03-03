@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hometown Map | Kelsey Sanchez</title>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        #map_f707ae400608861a67a3b4b0d51f1c0b {
+            width: 100%;
+            height: 600px;
+            border-radius: 8px;
+        }
+        .leaflet-container { font-size: 1rem; }
+    </style>
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="Lab02.html">AI Evaluation</a>
+                <a href="Lab03.html">Visualization Critique</a>
+                <a href="Lab4.html">Tableau Visualization</a>
+                <a href="Lab05.html">Vibe Coding</a>
+                <a href="Lab06.html"class="active">Hometown Map</a>
+            </div> 
+            
+        </nav>
+        <h1>Hometown Map</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Reflection</h2>
+            <p>My basemap design is inspired by “Barbie land” from the film Barbie (2023).  Of course, it has big emphasis on the color pink, so I tried to use as much shades of pink without making the map look too messy. I took inspiration from the aqua blue used as their beach for the water on my map. I was able to find the exact “Barbie” shade of pink and the exact font used in the title of the movie. I used these for the “country label.” From the image, I took inspiration from the grass to color my land, Barbie's dress, the road, the pops of hot pink from the houses, the yellow of the slides attached to the homes, and the pops of purple to color my roads and bridges. 
+	I knew going into this that I'd have to be careful with how much pink I used and where. I could make all my text label pink or else one would not be able to tell apart the major cities from the minor cities. I played around with the halo feature a lot in order to help me differentiate labels. Furthermore, because I used shades of pink that looked similar, maintaining the visual hierarchy across scale was tricky. I would change the pink because it looked too similar to another and forget to implement this change in the rest of my design. 
+I had no idea how to continue after the key code components that were provided. I asked AI to help me meet the requirements and it was a huge help when it came to building the map. I didn't like the icons it generated so I asked it to change them to include a coffee cup, museum, and smiley face. It told me that the icons I had chosen were not available in Glyphicons but it made the decision to switch the prefix to Font Awesome. </p>
+            <img src="images/Barbie_Set.jpg" alt="Barbie looking out over her land" width="100%">
+        </section>
+
+        <section>
+            <h2>Interactive Map</h2>
+            <div class="folium-map" id="map_f707ae400608861a67a3b4b0d51f1c0b"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kelsey Sanchez | <a href="https://github.com/kelsey2004/DCDA40833-portfolio">GitHub</a></p>
+    </footer>
+    <script src="js/nav.js"></script>
+<script>
+    
+    
+            var map_f707ae400608861a67a3b4b0d51f1c0b = L.map(
+                "map_f707ae400608861a67a3b4b0d51f1c0b",
+                {
+                    center: [32.71139688888889, -97.10850677777779],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8972f1f01a42720a0f61c2ca69575d83 = L.tileLayer(
+                "https://api.mapbox.com/styles/v1/kelseysanchez/cmm3w992g002n01s85ccla230/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoia2Vsc2V5c2FuY2hleiIsImEiOiJjbTF6bHh6cDkwOWZ5MmxwcTlpNGpya2d0In0.vvgJ7g1B8e02vHfYChGD5Q",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Mapbox",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8972f1f01a42720a0f61c2ca69575d83.addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+        
+    
+            var marker_0b5ecfa57bc0c51ac78abe218e6c14e6 = L.marker(
+                [32.708801, -97.155641],
+                {
+}
+            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+        
+    
+            var icon_99b71f8301a125154d10a68861ee8c39 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "coffee",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7e5e137eb29291bdadcfe716b507f788 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1986a42a13e666bce5c81ea8830febbe = $(`<div id="html_1986a42a13e666bce5c81ea8830febbe" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Pan Pan Bakery & Cafe</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Cafe         </p>         <img src="https://s3-media0.fl.yelpcdn.com/bphoto/aPtlgZE8ROSvIahVuY3x_Q/o.jpg"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Pan Pan Bakery & Cafe">         <p style="font-size:13px; line-height:1.4; margin:0;">             Family-owned Mexican & Japanese Bakery and Caf�. They have a unique selection of baked goods and beverages/flavors that offer a fresh take on traditional cafes.          </p>     </div>     </div>`)[0];
+                popup_7e5e137eb29291bdadcfe716b507f788.setContent(html_1986a42a13e666bce5c81ea8830febbe);
+            
+        
+
+        marker_0b5ecfa57bc0c51ac78abe218e6c14e6.bindPopup(popup_7e5e137eb29291bdadcfe716b507f788)
+        ;
+
+        
+    
+    
+            marker_0b5ecfa57bc0c51ac78abe218e6c14e6.bindTooltip(
+                `<div>
+                     Pan Pan Bakery & Cafe
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0b5ecfa57bc0c51ac78abe218e6c14e6.setIcon(icon_99b71f8301a125154d10a68861ee8c39);
+            
+    
+            var marker_c82d3dcbec92f173e279d4e9bb2162e3 = L.marker(
+                [32.75249, -97.08092],
+                {
+}
+            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+        
+    
+            var icon_5f97e53e463b81c8aee9ac420d84b979 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "face-smile",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e7469bd2c04b95e2f0126a265f773a33 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8d0fec1cb95ad7f09a299028e25ef022 = $(`<div id="html_8d0fec1cb95ad7f09a299028e25ef022" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Six Flags Over Texas</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Recreation         </p>         <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/fortworth/Six-Flags-Over-Texas_a0c13a9a-5056-a348-3a364a059f8b38ef.jpg"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Six Flags Over Texas">         <p style="font-size:13px; line-height:1.4; margin:0;">             First Six Flags opened in 1961. There is truly something for everyone. It has amazing selection of rides ranging from small, family-friendly rollercosters to massive rollercoasters. Ticket prices are also affordable.         </p>     </div>     </div>`)[0];
+                popup_e7469bd2c04b95e2f0126a265f773a33.setContent(html_8d0fec1cb95ad7f09a299028e25ef022);
+            
+        
+
+        marker_c82d3dcbec92f173e279d4e9bb2162e3.bindPopup(popup_e7469bd2c04b95e2f0126a265f773a33)
+        ;
+
+        
+    
+    
+            marker_c82d3dcbec92f173e279d4e9bb2162e3.bindTooltip(
+                `<div>
+                     Six Flags Over Texas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c82d3dcbec92f173e279d4e9bb2162e3.setIcon(icon_5f97e53e463b81c8aee9ac420d84b979);
+            
+    
+            var marker_b7e6556b198e16735b44f2ab531d01ac = L.marker(
+                [32.755329, -97.081864],
+                {
+}
+            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+        
+    
+            var icon_6e3f0db1d4341f0786cf2a2a943e9ac8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b4427f4360d8522b5954180dcdb2be49 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bb0ed027c7041325a509f5b7e9041348 = $(`<div id="html_bb0ed027c7041325a509f5b7e9041348" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Arlington Museum of Art</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Cultural         </p>         <img src="https://bloximages.newyork1.vip.townnews.com/theshorthorn.com/content/tncms/assets/v3/editorial/9/b2/9b2e1496-9177-11ef-8d0f-2fe7851d0c70/671952c43dd15.image.jpg?resize=750%2C500"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Arlington Museum of Art">         <p style="font-size:13px; line-height:1.4; margin:0;">             This museum has no permanent collection, it is constanly changing. It hosts exhibitions of popular franchises like Disney, Game of Thrones, and Wicked. Its really cool experience to learn about the different props and costumes within the media we like to consume.         </p>     </div>     </div>`)[0];
+                popup_b4427f4360d8522b5954180dcdb2be49.setContent(html_bb0ed027c7041325a509f5b7e9041348);
+            
+        
+
+        marker_b7e6556b198e16735b44f2ab531d01ac.bindPopup(popup_b4427f4360d8522b5954180dcdb2be49)
+        ;
+
+        
+    
+    
+            marker_b7e6556b198e16735b44f2ab531d01ac.bindTooltip(
+                `<div>
+                     Arlington Museum of Art
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b7e6556b198e16735b44f2ab531d01ac.setIcon(icon_6e3f0db1d4341f0786cf2a2a943e9ac8);
+            
+    
+            var marker_cefc81f24434f09b20d435abbe597ba4 = L.marker(
+                [32.67949, -97.11288],
+                {
+}
+            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+        
+    
+            var icon_3da3a83d25d817f74829f519cf0c5e2b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bd55a6e0c48e824f0ee6cecc858463c2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_dc943a1eaf0d07a4a8456f3f738a5337 = $(`<div id="html_dc943a1eaf0d07a4a8456f3f738a5337" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Mercado Juarez</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Resturant         </p>         <img src="https://static1.squarespace.com/static/67ffe9c67fdd7b4f098266c7/67ffe9ca7fdd7b4f09826799/68547feacc02100a18bbae2d/1751313421004/MG_7338.jpeg?format=1500w"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Mercado Juarez">         <p style="font-size:13px; line-height:1.4; margin:0;">             This is a Tex-Mex resturant whose atmosphere is one of the best, truly making you feel like you are dining in an hacienda with their interior design. You can order dishes that are Tex-Mex, but they also sell more traditional Mexcian dishes. ( Has the best salsa in my opinion)         </p>     </div>     </div>`)[0];
+                popup_bd55a6e0c48e824f0ee6cecc858463c2.setContent(html_dc943a1eaf0d07a4a8456f3f738a5337);
+            
+        
+
+        marker_cefc81f24434f09b20d435abbe597ba4.bindPopup(popup_bd55a6e0c48e824f0ee6cecc858463c2)
+        ;
+
+        
+    
+    
+            marker_cefc81f24434f09b20d435abbe597ba4.bindTooltip(
+                `<div>
+                     Mercado Juarez
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cefc81f24434f09b20d435abbe597ba4.setIcon(icon_3da3a83d25d817f74829f519cf0c5e2b);
+            
+    
+            var marker_ce77f91dfca03aeb56f3b52524f0e13c = L.marker(
+                [32.7217, -97.11509],
+                {
+}
+            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+        
+    
+            var icon_a8a2963787359d9edea7a827eea6a405 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aa2547cc49c1c359e9a20d5564b92bfd = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8a0fd073628df74caa20619708adca17 = $(`<div id="html_8a0fd073628df74caa20619708adca17" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Bethany Cafe </h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Resturant         </p>         <img src="https://s3-media0.fl.yelpcdn.com/bphoto/r2wBUZEdgABetTiZjXQUtA/348s.jpg"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Bethany Cafe ">         <p style="font-size:13px; line-height:1.4; margin:0;">             A family-owned resturant that sells Boba tea  and Asian snack, apetizers, dishes to order. The portions they give for the price is unbeatable. Their drink options range from shakes, teas, lattes, smoothies that is twice as much as a typical boba-chain location.         </p>     </div>     </div>`)[0];
+                popup_aa2547cc49c1c359e9a20d5564b92bfd.setContent(html_8a0fd073628df74caa20619708adca17);
+            
+        
+
+        marker_ce77f91dfca03aeb56f3b52524f0e13c.bindPopup(popup_aa2547cc49c1c359e9a20d5564b92bfd)
+        ;
+
+        
+    
+    
+            marker_ce77f91dfca03aeb56f3b52524f0e13c.bindTooltip(
+                `<div>
+                     Bethany Cafe 
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ce77f91dfca03aeb56f3b52524f0e13c.setIcon(icon_a8a2963787359d9edea7a827eea6a405);
+            
+    
+            var marker_ca8c3f1f3db50bd757de7d1d3f6139f8 = L.marker(
+                [32.738337, -97.11094],
+                {
+}
+            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+        
+    
+            var icon_f3b6a76cb959e65da4e749d1c6a72eab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d4384092f1f447600b718e293dee144e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ec172b8171b4e191716d29b4302d384b = $(`<div id="html_ec172b8171b4e191716d29b4302d384b" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">The Mosaic Market </h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Local Business         </p>         <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/12/25/41/come-see-what-s-inside.jpg?w=1200&h=1200&s=1"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="The Mosaic Market ">         <p style="font-size:13px; line-height:1.4; margin:0;">             This place is one-of-a-kind. I've seen home-d�cor and jewerly being sold to plants and homemade hot sauce.  You truly don't know what you'll find here and its always nice to shop small.          </p>     </div>     </div>`)[0];
+                popup_d4384092f1f447600b718e293dee144e.setContent(html_ec172b8171b4e191716d29b4302d384b);
+            
+        
+
+        marker_ca8c3f1f3db50bd757de7d1d3f6139f8.bindPopup(popup_d4384092f1f447600b718e293dee144e)
+        ;
+
+        
+    
+    
+            marker_ca8c3f1f3db50bd757de7d1d3f6139f8.bindTooltip(
+                `<div>
+                     The Mosaic Market 
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ca8c3f1f3db50bd757de7d1d3f6139f8.setIcon(icon_f3b6a76cb959e65da4e749d1c6a72eab);
+            
+    
+            var marker_4fc22a1a90565b1de0053ec0e3f30be0 = L.marker(
+                [32.679339, -97.129592],
+                {
+}
+            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+        
+    
+            var icon_9d6d524f261c3d886826a265afa1a0b0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "face-smile",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2d232a77c98e98ff52a4026c63f38277 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2733597d8fdb2f2dad2b0539dac9b7ac = $(`<div id="html_2733597d8fdb2f2dad2b0539dac9b7ac" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">Round One Bowling & Arcade</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Recreation         </p>         <img src="https://images.squarespace-cdn.com/content/v1/602d1a7212b33a4973f1ba6a/8eee53a6-93f5-4f27-9477-12af4f5b5738/ATCArcade.png"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="Round One Bowling & Arcade">         <p style="font-size:13px; line-height:1.4; margin:0;">             It's a Japanese arcade and one of the few locations in Texas. It's really cool to see the different kinds of games and claw machines they have.          </p>     </div>     </div>`)[0];
+                popup_2d232a77c98e98ff52a4026c63f38277.setContent(html_2733597d8fdb2f2dad2b0539dac9b7ac);
+            
+        
+
+        marker_4fc22a1a90565b1de0053ec0e3f30be0.bindPopup(popup_2d232a77c98e98ff52a4026c63f38277)
+        ;
+
+        
+    
+    
+            marker_4fc22a1a90565b1de0053ec0e3f30be0.bindTooltip(
+                `<div>
+                     Round One Bowling & Arcade
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4fc22a1a90565b1de0053ec0e3f30be0.setIcon(icon_9d6d524f261c3d886826a265afa1a0b0);
+            
+    
+            var marker_4a9c41600aa89415a40ee7e94d69bfa8 = L.marker(
+                [32.715453, -97.079996],
+                {
+}
+            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+        
+    
+            var icon_9627a8918adf5ee5aa2f9b5dae616ee5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "face-smile",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_12c5aeb3a40a26870bb47a7159a493eb = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f0de34fbedb375988af1cca965fc58fe = $(`<div id="html_f0de34fbedb375988af1cca965fc58fe" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;">East Library and Recreation Center </h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Recreation         </p>         <img src="https://www.arlingtontx.gov/files/assets/city/v/2/parks-amp-recreation/images/east_library_and_recreation_center.jpg?w=1200"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt="East Library and Recreation Center ">         <p style="font-size:13px; line-height:1.4; margin:0;">             It has a pool, library, computers, gym, basketball court and so much more. Its in the middle of a park so you can always talk a walk outside as well. It's a good all-in-one kind of spot. Perfect for days where you don't want an activity that spending money.          </p>     </div>     </div>`)[0];
+                popup_12c5aeb3a40a26870bb47a7159a493eb.setContent(html_f0de34fbedb375988af1cca965fc58fe);
+            
+        
+
+        marker_4a9c41600aa89415a40ee7e94d69bfa8.bindPopup(popup_12c5aeb3a40a26870bb47a7159a493eb)
+        ;
+
+        
+    
+    
+            marker_4a9c41600aa89415a40ee7e94d69bfa8.bindTooltip(
+                `<div>
+                     East Library and Recreation Center 
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4a9c41600aa89415a40ee7e94d69bfa8.setIcon(icon_9627a8918adf5ee5aa2f9b5dae616ee5);
+            
+    
+            var marker_fb841bfbd24d315f45781fe2efc4d8c0 = L.marker(
+                [32.651633, -97.109638],
+                {
+}
+            ).addTo(map_f707ae400608861a67a3b4b0d51f1c0b);
+        
+    
+            var icon_362a3cf22306dca2794ecca35282ee58 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "face-smile",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_be5a5a90ed8c6722b66a6750ee22f2b9 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_90a84626afe7f65cb922d786a3800dc3 = $(`<div id="html_90a84626afe7f65cb922d786a3800dc3" style="width: 100.0%; height: 100.0%;">     <div style="width:280px; font-family:Arial, sans-serif;">         <h4 style="margin:0 0 6px 0;"> Arlington Highlands</h4>         <p style="font-size:12px; color:#555; margin:0 0 8px 0;">             <b>Type:</b> Recreation         </p>         <img src="https://i0.wp.com/fortworthreport.org/wp-content/uploads/2025/04/image1.jpg?fit=1999%2C945&quality=89&ssl=1"              style="width:100%; border-radius:6px; margin-bottom:8px;"              alt=" Arlington Highlands">         <p style="font-size:13px; line-height:1.4; margin:0;">             There is shopping, resturants, and enterainment all in one place. It�s a very walkable spot with outdoor tables and chairs.  At night, all the string lights are lit, illuminating the place, its very beautiful.          </p>     </div>     </div>`)[0];
+                popup_be5a5a90ed8c6722b66a6750ee22f2b9.setContent(html_90a84626afe7f65cb922d786a3800dc3);
+            
+        
+
+        marker_fb841bfbd24d315f45781fe2efc4d8c0.bindPopup(popup_be5a5a90ed8c6722b66a6750ee22f2b9)
+        ;
+
+        
+    
+    
+            marker_fb841bfbd24d315f45781fe2efc4d8c0.bindTooltip(
+                `<div>
+                      Arlington Highlands
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fb841bfbd24d315f45781fe2efc4d8c0.setIcon(icon_362a3cf22306dca2794ecca35282ee58);
+            
+</script>
+</body>
+</html>
