@@ -94,6 +94,6 @@ for _, row in df.iterrows():
 
 
 # ── Save ─────────────────────────────────────────────────────────────────────
-output_file = 'Lab06.html'
+output_file = 'Hometown_map.html'
 m.save(output_file)
 print(f'\nMap saved to {output_file}')
