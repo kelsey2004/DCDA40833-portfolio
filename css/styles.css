@@ -7,12 +7,12 @@
    CSS Variables (Color Scheme)
    ========================= */
 :root {
-    --primary-color: #a97bef;      /* TCU Purple */
-    --secondary-color: #8ce0ff;    /* Light Purple */
-    --accent-color: #6b4e71;       /* Gold accent */
-    --text-color: #333;            /* Dark gray for text */
-    --text-secondary: #64748b;     /* Lighter gray for captions */
-    --bg-color: #536873;           /* Light background */
+    --primary-color: #9191e9;      /* Made the design choice to alter the color scheme to a cool-winter theme. Periwinkle is my favorite color so I made it the primary color. */
+    --secondary-color: #700548;    
+    --accent-color: #c2aff0;       /* Made the accent color a light purple so it shows up well against the dark background at the footer of the page. */
+    --text-color: #333;            
+    --text-secondary: #64748b;     
+    --bg-color: #2d5d7b;           /*Made the background color a dark blue to make sure it does not over power the content on the page.*/
     --white: #f5DDDD;
 }
 
@@ -61,7 +61,7 @@ header p {
 }
 
 nav {
-    background-color: #3d1461;
+    background-color: #457eac; /*Changed the background color of the navigation bar to this light blue for some contrast.*/ 
     padding: 0.75rem;
     display: flex;              /* Make nav a flex container */
     justify-content: center;    /* Center the ul inside nav */
@@ -99,7 +99,7 @@ nav a:hover {
     background-color: var(--primary-color);
 }
 
-/* Hamburger button — hidden on desktop, shown on mobile */
+/* Hamburger button — hidden on desktop,shown on mobile.  */
 .hamburger {
     display: none;
     background: none;
